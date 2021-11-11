@@ -1,3 +1,5 @@
+package JAVA;
+
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -10,7 +12,7 @@ import java.util.stream.*;
 import java.util.stream.Collectors;
 import static java.util.stream.Collectors.toList;
 
-class Result {
+class Result1 {
 
     /*
      * Complete the 'findStrings' function below.
@@ -84,7 +86,7 @@ public class FindString {
         queries.add(24);
 
 
-        List<String> result = Result.findStrings(w, queries);
+        List<String> result = Result1.findStrings(w, queries);
 
 
 
