@@ -1,4 +1,4 @@
-package DataStructures;
+package Hackerrank.DataStructures;
 
 import java.io.*;
 import java.math.*;
@@ -37,17 +37,16 @@ public class ReverseArray {
         int arrCount = Integer.parseInt(bufferedReader.readLine().trim());
 
         List<Integer> arr = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-            .map(Integer::parseInt)
-            .collect(toList());
+                .map(Integer::parseInt)
+                .collect(toList());
 
         List<Integer> res = Result.reverseArray(arr);
 
         bufferedWriter.write(
-            res.stream()
-                .map(Object::toString)
-                .collect(joining(" "))
-            + "\n"
-        );
+                res.stream()
+                        .map(Object::toString)
+                        .collect(joining(" "))
+                        + "\n");
 
         bufferedReader.close();
         bufferedWriter.close();
