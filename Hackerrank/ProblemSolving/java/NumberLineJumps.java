@@ -1,4 +1,4 @@
-package ProblemSolving.java;
+package Hackerrank.ProblemSolving.java;
 
 import java.io.*;
 import java.math.*;
@@ -19,22 +19,22 @@ class Result4 {
      *
      * The function is expected to return a STRING.
      * The function accepts following parameters:
-     *  1. INTEGER x1
-     *  2. INTEGER v1
-     *  3. INTEGER x2
-     *  4. INTEGER v2
+     * 1. INTEGER x1
+     * 2. INTEGER v1
+     * 3. INTEGER x2
+     * 4. INTEGER v2
      */
 
     public static String kangaroo(int x1, int v1, int x2, int v2) {
 
-        Boolean flag = x1>x2;
-        while(true){
+        Boolean flag = x1 > x2;
+        while (true) {
             x1 += v1;
             x2 += v2;
-            if(x1 == x2){
+            if (x1 == x2) {
                 return "YES";
             }
-            if(x1>x2 != flag){
+            if (x1 > x2 != flag) {
                 return "NO";
             }
 
@@ -46,10 +46,13 @@ class Result4 {
 
 public class NumberLineJumps {
     public static void main(String[] args) throws IOException {
-        // BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        // BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+        // BufferedReader bufferedReader = new BufferedReader(new
+        // InputStreamReader(System.in));
+        // BufferedWriter bufferedWriter = new BufferedWriter(new
+        // FileWriter(System.getenv("OUTPUT_PATH")));
 
-        // String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+        // String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$",
+        // "").split(" ");
 
         // int x1 = Integer.parseInt(firstMultipleInput[0]);
 
@@ -62,7 +65,7 @@ public class NumberLineJumps {
         // String result = Result.kangaroo(x1, v1, x2, v2);
         String result = Result4.kangaroo(0, 2, 5, 3);
         System.out.println(result);
-        
+
         // bufferedWriter.write(result);
         // bufferedWriter.newLine();
 
@@ -70,4 +73,3 @@ public class NumberLineJumps {
         // bufferedWriter.close();
     }
 }
-

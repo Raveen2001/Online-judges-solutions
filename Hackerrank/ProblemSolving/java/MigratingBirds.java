@@ -1,4 +1,4 @@
-package ProblemSolving.java;
+package Hackerrank.ProblemSolving.java;
 
 import java.io.*;
 import java.math.*;

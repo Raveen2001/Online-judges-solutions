@@ -1,5 +1,4 @@
-package ProblemSolving.java;
-
+package Hackerrank.ProblemSolving.java;
 
 import java.io.*;
 import java.lang.reflect.Array;
@@ -24,14 +23,14 @@ class Result1 {
      */
 
     public static List<Integer> gradingStudents(List<Integer> grades) {
-    // Write your code here
+        // Write your code here
         List<Integer> finalGrade = new ArrayList<>();
-        for(Integer grade: grades){
-            if(grade>=38 && grade%5 != 0){
+        for (Integer grade : grades) {
+            if (grade >= 38 && grade % 5 != 0) {
                 int mult5 = Math.floorDiv(grade, 5) + 1;
                 int diff = mult5 * 5 - grade;
-                finalGrade.add((diff<3)?mult5*5:grade);
-            }else{
+                finalGrade.add((diff < 3) ? mult5 * 5 : grade);
+            } else {
                 finalGrade.add(grade);
             }
         }
@@ -43,33 +42,34 @@ class Result1 {
 
 public class Grading {
     public static void main(String[] args) throws IOException {
-        // BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        // BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+        // BufferedReader bufferedReader = new BufferedReader(new
+        // InputStreamReader(System.in));
+        // BufferedWriter bufferedWriter = new BufferedWriter(new
+        // FileWriter(System.getenv("OUTPUT_PATH")));
 
         // int gradesCount = Integer.parseInt(bufferedReader.readLine().trim());
 
-
         // List<Integer> grades = IntStream.range(0, gradesCount).mapToObj(i -> {
-        //     try {
-        //         return bufferedReader.readLine().replaceAll("\\s+$", "");
-        //     } catch (IOException ex) {
-        //         throw new RuntimeException(ex);
-        //     }
+        // try {
+        // return bufferedReader.readLine().replaceAll("\\s+$", "");
+        // } catch (IOException ex) {
+        // throw new RuntimeException(ex);
+        // }
         // })
-        //     .map(String::trim)
-        //     .map(Integer::parseInt)
-        //     .collect(toList());
-        
-        List<Integer> grades = Arrays.asList(new Integer[]{73, 67, 38, 33});
+        // .map(String::trim)
+        // .map(Integer::parseInt)
+        // .collect(toList());
+
+        List<Integer> grades = Arrays.asList(new Integer[] { 73, 67, 38, 33 });
 
         List<Integer> result = Result1.gradingStudents(grades);
         result.stream().forEach(x -> System.out.println(x));
 
         // bufferedWriter.write(
-        //     result.stream()
-        //         .map(Object::toString)
-        //         .collect(joining("\n"))
-        //     + "\n"
+        // result.stream()
+        // .map(Object::toString)
+        // .collect(joining("\n"))
+        // + "\n"
         // );
 
         // bufferedReader.close();

@@ -1,4 +1,4 @@
-package ProblemSolving.java;
+package Hackerrank.ProblemSolving.java;
 
 import java.io.*;
 import java.math.*;
@@ -25,27 +25,28 @@ class Result {
         String militaryTime;
         Boolean isAM;
         int strlen = s.length();
-        System.out.println(s.substring(strlen-2, strlen));
-        isAM = s.substring(strlen-2, strlen).equals("AM")? true: false;
-        int hours = Integer.parseInt(s.substring(0,2));
-        String min_sec = s.substring(3,8);
-        
+        System.out.println(s.substring(strlen - 2, strlen));
+        isAM = s.substring(strlen - 2, strlen).equals("AM") ? true : false;
+        int hours = Integer.parseInt(s.substring(0, 2));
+        String min_sec = s.substring(3, 8);
+
         // System.out.println(hours + ":" + min + ":" + sec + ":" + isAM);
-        
-        if (isAM){
-            hours = (hours == 12)? hours - 12: hours;
-            militaryTime = getString(hours) + ":" + min_sec;  
-        }else{
-            hours = (hours <= 11)? hours + 12: hours;
-            militaryTime = getString(hours) + ":" + min_sec;;
+
+        if (isAM) {
+            hours = (hours == 12) ? hours - 12 : hours;
+            militaryTime = getString(hours) + ":" + min_sec;
+        } else {
+            hours = (hours <= 11) ? hours + 12 : hours;
+            militaryTime = getString(hours) + ":" + min_sec;
+            ;
         }
         return militaryTime;
     }
 
-    public static String getString(int a){
+    public static String getString(int a) {
         String str = Integer.toString(a);
-        if (str.length() == 1){
-            str = "0"+str;
+        if (str.length() == 1) {
+            str = "0" + str;
         }
         return str;
     }
@@ -54,8 +55,10 @@ class Result {
 
 public class TimeFormatConvertor {
     public static void main(String[] args) throws IOException {
-        // BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        // BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+        // BufferedReader bufferedReader = new BufferedReader(new
+        // InputStreamReader(System.in));
+        // BufferedWriter bufferedWriter = new BufferedWriter(new
+        // FileWriter(System.getenv("OUTPUT_PATH")));
 
         String s = "11:01:00PM";
 
@@ -69,4 +72,3 @@ public class TimeFormatConvertor {
         // bufferedWriter.close();
     }
 }
-
