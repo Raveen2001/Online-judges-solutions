@@ -1,6 +1,7 @@
 package LeetCode;
 
 public class VowelsOfAllSubStrings {
+    // leetcode
     public long countVowels(String word) {
         int i;
         long count = 0;
@@ -13,5 +14,4 @@ public class VowelsOfAllSubStrings {
         }
         return count;
     }
-
 }
