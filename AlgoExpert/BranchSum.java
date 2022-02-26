@@ -17,22 +17,21 @@ class Program {
   }
 
   public static List<Integer> branchSums(BinaryTree root) {
+		List<Integer> sums = new ArrayList<Integer>();
     // Write your code here.
-    return branchSums(root, 0, new ArrayList<Integer>());
+    branchSums(root, 0, sums);
+		return sums;
   }
-	
-	public static List<Integer> branchSums(BinaryTree root, int sum, List<Integer> res){
+	public static void branchSums(BinaryTree root, int sum, List<Integer> res){
+		if(root == null) return;
 		sum += root.value;
-		if(root.left != null){
-			branchSums(root.left, sum, res);
-		}
-		if(root.right != null){
-			branchSums(root.right, sum, res);
-		}
+		branchSums(root.left, sum, res);
+		branchSums(root.right, sum, res);
 		if(root.left == null && root.right == null){
 			res.add(sum);			
 		}
-		return res;
+		return;
 	}
 }
+
 
