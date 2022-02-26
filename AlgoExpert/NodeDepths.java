@@ -1,21 +1,15 @@
 package AlgoExpert;
 
-
+import java.util.*;
 class Program {
-	
-	static int sum = 0;
 
   public static int nodeDepths(BinaryTree root) {
-		sum = 0;
-		nodeDepths(root, 0);
-		return sum;
+		return nodeDepths(root, 0);
   }
 	
-	public static void nodeDepths(BinaryTree root, int level){
-		if(root == null) return;	
-		nodeDepths(root.left, level + 1);
-		nodeDepths(root.right, level + 1);
-		sum += level;
+	public static int nodeDepths(BinaryTree root, int level){
+		if(root == null) return 0;	
+		return level + nodeDepths(root.left, level + 1) + nodeDepths(root.right, level + 1);
 	}
 
   static class BinaryTree {
