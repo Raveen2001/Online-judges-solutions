@@ -16,3 +16,20 @@ class Program {
 	}
 }
 
+
+// 2 method 
+import java.util.*;
+
+class Program {
+  public static int getNthFib(int n) {
+		if(n == 2) return 1;
+		if(n == 1) return 0;
+		return getNthFib(n-2) + getNthFib(n-1);
+	}
+}
+
+
+
+
+
+
