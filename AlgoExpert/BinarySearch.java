@@ -15,3 +15,25 @@ class Program {
 		else return binarySearch(array, target, mid+1, right);
 	}
 }
+
+
+// 2 method --> space optimal
+
+
+import java.util.*;
+
+class Program {
+  public static int binarySearch(int[] array, int target) {
+    int left = 0; 
+		int right = array.length - 1;
+		while(left <= right){
+			int mid = (left + right)/2;
+			int potentialMatch = array[mid];
+			if(potentialMatch == target) return mid;
+			else if(potentialMatch > target) right = mid - 1;
+			else left = mid + 1;
+		}
+    return -1;
+  }
+}
+
