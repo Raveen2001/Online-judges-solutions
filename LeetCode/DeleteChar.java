@@ -19,3 +19,28 @@ class Solution {
         return s;
     }
 }
+
+
+// method 2 -- optimal o(n)
+
+class Solution {
+    public String makeFancyString(String s) {
+        StringBuilder res = new StringBuilder();
+        char prev = s.charAt(0);
+        res.append(prev);
+        int freq = 1;
+        for(int i = 1; i<s.length(); i++){
+            if(prev == s.charAt(i)){
+                freq++;
+            }else{
+                prev = s.charAt(i);
+                freq = 1;
+            }
+            if(freq > 2){
+                continue;
+            }
+            res.append(s.charAt(i));
+        }
+        return res.toString();
+    }
+}
