@@ -28,3 +28,34 @@ class Program {
   }
 }
 
+
+
+// method 2 - optimal 
+
+
+import java.util.*;
+
+class Program {
+  public static List<Integer[]> threeNumberSum(int[] array, int targetSum) {
+		Arrays.sort(array);
+    List<Integer[]> triplets = new ArrayList<>();
+    for(int i = 0; i< array.length - 2; i++){
+			int cur = array[i];
+			int left = i+1;
+			int right = array.length-1;
+			while(left < right){
+				int curSum = cur + array[left] + array[right];
+				if(curSum == targetSum){
+					triplets.add(new Integer[]{cur, array[left], array[right]});
+					left ++;
+					right --;
+				}else if(curSum < targetSum){
+					left ++;
+				}else{
+					right--;
+				}
+			}
+		}
+		return triplets;
+  }
+}
