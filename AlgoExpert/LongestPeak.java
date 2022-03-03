@@ -34,3 +34,39 @@ class Program {
     return maxPeak;
   }
 }
+
+
+
+// method 2 -- more readable
+
+import java.util.*;
+
+class Program {
+  public static int longestPeak(int[] a) {
+    int maxPeakLength = 0;
+		int i = 1;
+		while(i<a.length-1){
+			boolean isPeak = (a[i-1] < a[i]) && (a[i] > a[i+1]);
+			if(!isPeak){
+				i+=1;
+				continue;
+			}
+			System.out.println("Peak: " + a[i]);
+			int leftIdx = i - 2;
+			while(leftIdx >= 0 && a[leftIdx] < a[leftIdx + 1]){
+				leftIdx -= 1;
+			}
+			System.out.println("left: " + leftIdx);
+			int rightIdx = i + 2;
+			while(rightIdx < a.length && a[rightIdx] < a[rightIdx - 1]){
+				rightIdx += 1;
+			}
+			System.out.println("right: " + rightIdx);
+			int currentPeakLength = rightIdx - leftIdx - 1;
+			System.out.println(currentPeakLength);
+			maxPeakLength = Math.max(currentPeakLength, maxPeakLength);
+			i = rightIdx-1;
+		}
+    return maxPeakLength;
+  }
+}
