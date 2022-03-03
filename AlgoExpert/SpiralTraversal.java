@@ -44,3 +44,42 @@ class Program {
   }
 }
 
+
+// method 2 - code optimized
+
+import java.util.*;
+
+class Program {
+  public static List<Integer> spiralTraverse(int[][] array) {
+    int sr = 0;
+		int sc = 0;
+		int er = array.length - 1;
+		int ec = array[0].length - 1;
+		List<Integer> res = new ArrayList<>();
+		System.out.println(sr + " " + sc + " " + er + " " + ec);
+		while(sr <= er && sc <= ec){
+			for(int i = sc; i<=ec; i++){
+				res.add(array[sr][i]);
+			}
+			for(int i = sr + 1; i<=er; i++){
+				res.add(array[i][ec]);
+			}
+			for(int i = ec - 1; i>= sc ; i--){
+				if(sr == er) break;
+				res.add(array[er][i]);
+			}
+			
+			for(int i = er - 1; i> sr; i--){
+				if(sc == ec) break;
+				res.add(array[i][sr]);
+			}
+			sr ++;
+			er --;
+			sc ++;
+			ec --;
+		}
+    return res;
+  }
+}
+
+
