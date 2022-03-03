@@ -1,2 +1,2 @@
-# Hacker-Rank-Solutions
-This repository contains solution for my hacker rank problems
+  # Online judges solution
+This repository contains solution for AlgoExpert, Leetcode and hackerrank problems
