@@ -20,3 +20,28 @@ class Program {
   }
 }
 
+
+//method 2 - algoexpert solution 
+
+import java.util.*;
+
+class Program {
+  public int[] arrayOfProducts(int[] a) {
+    int[] res = new int[a.length];
+		int curLeftProduct = 1;
+		int curRightProduct = 1;
+		int i;
+		for(i = 0; i<a.length; i++){
+			res[i] = curLeftProduct;
+			curLeftProduct *= a[i];
+		}
+		
+		for(i = a.length-1; i>= 0; i--){
+			res[i] *= curRightProduct;
+			curRightProduct *= a[i];
+		}
+    return res;
+  }
+}
+
+
