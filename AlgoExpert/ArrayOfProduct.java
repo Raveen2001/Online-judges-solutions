@@ -28,6 +28,7 @@ import java.util.*;
 class Program {
   public int[] arrayOfProducts(int[] a) {
     int[] res = new int[a.length];
+
 		int curLeftProduct = 1;
 		int curRightProduct = 1;
 		int i;
