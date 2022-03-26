@@ -1,2 +1,6 @@
   # Online judges solution
-This repository contains solution for AlgoExpert, Leetcode and hackerrank problems
+This repository contains my solution for 
+ - AlgoExpert
+ - Leetcode
+ - hackerrank
+ - and other problems too
