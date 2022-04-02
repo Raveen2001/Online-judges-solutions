@@ -46,11 +46,11 @@ public class SpaceKing {
         List<List<Integer>> temp = deepCopy2DList(aliens);
 
 
-
         if(isAshaTurn){
+            int tempGold = goldObtained;
+            shoot(temp, goldObtained, false);
+            
             for(int i = 0; i<aliens.size(); i++) {
-                int tempGold = goldObtained;
-                shoot(temp, goldObtained, false);
                 temp = deepCopy2DList(aliens);
                 int gold = hitOrKillAlienAndGetGold(temp, i, p);
                 if(gold > 0){
