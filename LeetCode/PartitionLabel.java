@@ -10,8 +10,10 @@ class PartitionLabel {
         for (i = 0; i < n; i++) {
             lastOcc[s.charAt(i) - 'a'] = i;
         }
+
         List<Integer> ans = new ArrayList<>();
         int start = 0, end = 0;
+
         for (i = 0; i < n; i++) {
             end = Math.max(end, lastOcc[s.charAt(i) - 'a']);
             if (end == i) {
@@ -19,6 +21,7 @@ class PartitionLabel {
                 start = i + 1;
             }
         }
+
         return ans;
     }
 }
